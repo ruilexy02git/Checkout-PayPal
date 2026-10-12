@@ -3,112 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout - Finalizar Compra</title>
+    <title>E-book / Pagamento</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
-
         body {
-            background-color: #f4f6f8;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .checkout-card {
-            background: #ffffff;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-            width: 100%;
-            max-width: 420px;
-            padding: 32px 24px;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
             text-align: center;
+            padding: 50px;
         }
-
-        .badge {
-            background-color: #e8f5e9;
-            color: #2e7d32;
-            font-size: 13px;
-            font-weight: 600;
-            padding: 6px 12px;
-            border-radius: 20px;
+        .container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
             display: inline-block;
-            margin-bottom: 16px;
+            max-width: 400px;
+            width: 100%;
         }
-
-        .title {
-            color: #1a1a1a;
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 8px;
+        h2 {
+            color: #333;
         }
-
-        .subtitle {
-            color: #666666;
-            font-size: 14px;
-            margin-bottom: 24px;
-            line-height: 1.4;
+        p {
+            color: #666;
+            margin-bottom: 20px;
         }
-
-        .price-box {
-            background-color: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 16px;
-            margin-bottom: 24px;
-        }
-
-        .price-amount {
-            color: #0070ba;
-            font-size: 32px;
-            font-weight: 800;
-        }
-
-        .price-currency {
-            font-size: 14px;
-            color: #64748b;
-            font-weight: 600;
-            margin-left: 4px;
-        }
-
-        .paypal-wrapper {
-            margin-top: 16px;
-            min-height: 150px;
+        #paypal-container-LP8LT5UKCPUEY {
+            margin-top: 20px;
         }
     </style>
-
-    <!-- Parte 1 do Código PayPal -->
-    <script 
-      src="https://www.paypal.com/sdk/js?client-id=BAAavaHx76qIXCRU-8ZvwjUelCWDqc6aGuAuaHXmYGq5HwWnSR2AmJSuVy50_Gnps3GTzDn6kUuMGcbZF8&components=hosted-buttons&disable-funding=venmo&currency=USD">
-    </script>
 </head>
 <body>
 
-    <div class="checkout-card">
-        <span class="badge">🔒 Pagamento Seguro</span>
-        <h1 class="title">Viva do Marketing Digital utilizando IA</h1>
-        <p class="subtitle">Conclua o pagamento para ter acesso imediato ao conteúdo digital.</p>
+    <div class="container">
+        <h2>Adquirir E-book</h2>
+        <p>Faça o pagamento de forma segura com o PayPal.</p>
 
-        <div class="price-box">
-            <span class="price-amount">$ 2.97</span>
-            <span class="price-currency">USD</span>
-        </div>
+        <!-- Script SDK do PayPal -->
+        <script 
+          src="https://www.paypal.com/sdk/js?client-id=BAAavaHx76qIXCRU-8ZvwjUelCWDqc6aGuAuaHXmYGq5HwWnSR2AmJSuVy50_Gnps3GTzDn6kUuMGcbZF8&components=hosted-buttons&disable-funding=venmo&currency=USD">
+        </script>
 
-        <!-- Parte 2 do Código PayPal -->
-        <div class="paypal-wrapper">
-            <div id="paypal-container-LP8LT5UKCPUEY"></div>
-            <script>
-              paypal.HostedButtons({
-                hostedButtonId: "LP8LT5UKCPUEY",
-              }).render("#paypal-container-LP8LT5UKCPUEY")
-            </script>
-        </div>
+        <!-- Botão do PayPal (ID: LP8LT5UKCPUEY) -->
+        <div id="paypal-container-LP8LT5UKCPUEY"></div>
+        <script>
+          paypal.HostedButtons({
+            hostedButtonId: "LP8LT5UKCPUEY",
+          }).render("#paypal-container-LP8LT5UKCPUEY");
+        </script>
     </div>
 
 </body>
