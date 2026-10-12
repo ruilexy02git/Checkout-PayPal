@@ -3,54 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-book / Pagamento</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            text-align: center;
-            padding: 50px;
-        }
-        .container {
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-            display: inline-block;
-            max-width: 400px;
-            width: 100%;
-        }
-        h2 {
-            color: #333;
-        }
-        p {
-            color: #666;
-            margin-bottom: 20px;
-        }
-        #paypal-container-LP8LT5UKCPUEY {
-            margin-top: 20px;
-        }
-    </style>
+    <title>Checkout - Finalizar Compra</title>
+
+    <!-- 1. SDK DO PAYPAL (Cole aqui no head) -->
+    <script src="https://www.paypal.com/sdk/js?client-id=BAAavaHx76qIXCRU-8ZvwjUelCWDqc6aGuAuaHXmYGq5HwWnSR2AmJSuVy50_Gnps3GTzDn6kUuMGcbZF8&components=hosted-buttons&disable-funding=venmo&currency=USD"></script>
 </head>
 <body>
 
-    <div class="container">
-        <h2>Adquirir E-book</h2>
-        <p>Faça o pagamento de forma segura com o PayPal.</p>
+    <!-- O conteúdo da sua página (títulos, descrição, imagem do e-book, etc.) -->
 
-        <!-- Script SDK do PayPal -->
-        <script 
-          src="https://www.paypal.com/sdk/js?client-id=BAAavaHx76qIXCRU-8ZvwjUelCWDqc6aGuAuaHXmYGq5HwWnSR2AmJSuVy50_Gnps3GTzDn6kUuMGcbZF8&components=hosted-buttons&disable-funding=venmo&currency=USD">
-        </script>
-
-        <!-- Botão do PayPal (ID: LP8LT5UKCPUEY) -->
-        <div id="paypal-container-LP8LT5UKCPUEY"></div>
-        <script>
-          paypal.HostedButtons({
-            hostedButtonId: "LP8LT5UKCPUEY",
-          }).render("#paypal-container-LP8LT5UKCPUEY");
-        </script>
-    </div>
+    <!-- 2. BOTÃO DO PAYPAL (Cole onde o botão deve aparecer) -->
+    <div id="paypal-container-LP8LT5UKCPUEY"></div>
+    <script>
+      paypal.HostedButtons({
+        hostedButtonId: "LP8LT5UKCPUEY",
+      }).render("#paypal-container-LP8LT5UKCPUEY")
+    </script>
 
 </body>
 </html>
